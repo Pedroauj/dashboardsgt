@@ -1,16 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { TrendingUp, TrendingDown, BarChart3 } from "lucide-react";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { FinancialCard } from "@/components/dashboard/FinancialCard";
+import { IndicatorCard } from "@/components/dashboard/IndicatorCard";
+import { SectionHeader } from "@/components/dashboard/SectionHeader";
+import { resumoFinanceiro, indicadores } from "@/data/mockData";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const { contasReceber, contasPagar } = resumoFinanceiro;
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background px-4 py-8 lg:px-8 xl:px-16">
+      <div className="mx-auto max-w-7xl">
+        <DashboardHeader />
+
+        {/* Contas a Receber */}
+        <section className="mb-10">
+          <SectionHeader title="Contas a Receber" icon={TrendingUp} />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <FinancialCard title="Valor a Receber" value={contasReceber.valorAReceber} variant="receita" />
+            <FinancialCard title="Valor Recebido" value={contasReceber.valorRecebido} variant="receita" />
+            <FinancialCard title="Saldo a Receber" value={contasReceber.saldoAReceber} variant="saldo-receita" linkTo="/contas-a-receber" />
+          </div>
+        </section>
+
+        {/* Contas a Pagar */}
+        <section className="mb-10">
+          <SectionHeader title="Contas a Pagar" icon={TrendingDown} />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <FinancialCard title="Valor a Pagar" value={contasPagar.valorAPagar} variant="despesa" />
+            <FinancialCard title="Valor Pago" value={contasPagar.valorPago} variant="despesa" />
+            <FinancialCard title="Saldo a Pagar" value={contasPagar.saldoAPagar} variant="saldo-despesa" linkTo="/contas-a-pagar" />
+          </div>
+        </section>
+
+        {/* Indicadores */}
+        <section>
+          <SectionHeader title="Indicadores" icon={BarChart3} />
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
+            {indicadores.map((ind) => (
+              <IndicatorCard key={ind.id} nome={ind.nome} percentual={ind.percentual} cor={ind.cor} />
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
