@@ -8,6 +8,7 @@ import { FinancialDataProvider } from "@/contexts/FinancialDataContext";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
+import LandingPage from "./pages/LandingPage";
 import PainelAdministrativo from "./pages/admin/PainelAdministrativo";
 import ContasAReceber from "./pages/ContasAReceber";
 import ContasAPagar from "./pages/ContasAPagar";
@@ -25,6 +26,7 @@ const App = () => (
         <AuthProvider>
           <FinancialDataProvider>
             <Routes>
+              <Route path="/landing" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
               <Route path="/contas-a-receber" element={<ProtectedRoute><ContasAReceber /></ProtectedRoute>} />

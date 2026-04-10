@@ -1075,7 +1075,7 @@ const Index = () => {
                 <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 xl:grid-cols-4 xl:col-start-1 xl:row-start-2">
                   {/* SALDO LÍQUIDO */}
                   <div
-                    className={`group relative overflow-hidden rounded-[22px] border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)] ${kpiExtra.saldoLiquido >= 0
+                    className={`group relative overflow-hidden rounded-[22px] border p-4 min-h-[200px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)] ${kpiExtra.saldoLiquido >= 0
                         ? "border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5"
                         : "border-red-500/25 bg-gradient-to-br from-red-500/10 to-red-500/5"
                       }`}
@@ -1104,7 +1104,7 @@ const Index = () => {
                           )}
                         </div>
                       </div>
-                      <div className="text-[clamp(1.9rem,2.5vw,2.5rem)] font-extrabold tracking-[-0.05em] text-white">
+                      <div className="font-extrabold tracking-[-0.04em] text-white leading-tight break-all" style={{ fontSize: 'clamp(13px, 1.6vw, 22px)' }}>
                         <CountUp value={kpiExtra.saldoLiquido} />
                       </div>
                       <p className="mt-2 text-sm text-slate-400">
@@ -1134,7 +1134,7 @@ const Index = () => {
                   </div>
 
                   {/* INADIMPLÊNCIA */}
-                  <div className="group relative overflow-hidden rounded-[22px] border border-red-500/25 bg-gradient-to-br from-red-500/10 to-red-500/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+                  <div className="group relative overflow-hidden rounded-[22px] border border-red-500/25 bg-gradient-to-br from-red-500/10 to-red-500/5 p-4 min-h-[200px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.05),transparent_30%)]" />
                     <div className="relative flex h-full flex-col">
                       <div className="mb-4 flex items-start justify-between">
@@ -1145,7 +1145,7 @@ const Index = () => {
                           <AlertCircle className="h-4 w-4 text-red-400" />
                         </div>
                       </div>
-                      <div className="text-[clamp(1.9rem,2.5vw,2.5rem)] font-extrabold tracking-[-0.05em] text-white">
+                      <div className="font-extrabold tracking-[-0.04em] text-white leading-tight break-all" style={{ fontSize: 'clamp(13px, 1.6vw, 22px)' }}>
                         <CountUp value={kpiExtra.inadimplencia} />
                       </div>
                       <p className="mt-2 text-sm text-slate-400">
@@ -1168,7 +1168,7 @@ const Index = () => {
                   </div>
 
                   {/* % REALIZAÇÃO CP */}
-                  <div className="group relative overflow-hidden rounded-[22px] border border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+                  <div className="group relative overflow-hidden rounded-[22px] border border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-4 min-h-[200px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.05),transparent_30%)]" />
                     <div className="relative flex h-full flex-col">
                       <div className="mb-4 flex items-start justify-between">
@@ -1179,7 +1179,7 @@ const Index = () => {
                           <TrendingDown className="h-4 w-4 text-violet-400" />
                         </div>
                       </div>
-                      <div className="text-[clamp(1.9rem,2.5vw,2.5rem)] font-extrabold tracking-[-0.05em] text-white">
+                      <div className="font-extrabold tracking-[-0.04em] text-white leading-tight break-all" style={{ fontSize: 'clamp(13px, 1.6vw, 22px)' }}>
                         {kpiExtra.realizacaoCP.toFixed(0)}%
                       </div>
                       <p className="mt-2 text-sm text-slate-400">
@@ -1198,7 +1198,7 @@ const Index = () => {
                   </div>
 
                   {/* % REALIZAÇÃO CR */}
-                  <div className="group relative overflow-hidden rounded-[22px] border border-cyan-500/25 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+                  <div className="group relative overflow-hidden rounded-[22px] border border-cyan-500/25 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-4 min-h-[200px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.05),transparent_30%)]" />
                     <div className="relative flex h-full flex-col">
                       <div className="mb-4 flex items-start justify-between">
@@ -1209,7 +1209,7 @@ const Index = () => {
                           <TrendingUp className="h-4 w-4 text-cyan-400" />
                         </div>
                       </div>
-                      <div className="text-[clamp(1.9rem,2.5vw,2.5rem)] font-extrabold tracking-[-0.05em] text-white">
+                      <div className="font-extrabold tracking-[-0.04em] text-white leading-tight break-all" style={{ fontSize: 'clamp(13px, 1.6vw, 22px)' }}>
                         {(kpiExtra.realizacaoCR ?? 0).toFixed(0)}%
                       </div>
                       <p className="mt-2 text-sm text-slate-400">
